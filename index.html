@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <style>
+        *{
+            margin: 0;
+            padding: auto;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            padding: 15px;
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: #c1cbc1;
+        }
+        input{
+            margin: 5px 0px;
+            height: auto;
+            padding: 7px;
+        }
+        button{
+            height: 35px;
+            margin:5px;
+            background-color:rgb(93, 159, 93);
+            border: none;
+            border-radius: 5px;
+            color:black;
+        }
+        button:hover{
+            background-color:rgb(221, 228, 228);
+        }
+        h1{
+            text-align: center;
+        }
+
+        
+        
+    </style>
+</head>
+
+<body>
+    <form method="post" action="/predict">
+    <div class="container">
+      <label for="review">Enter your review:</label><br>
+      <textarea id="review" name="review" rows="4" cols="50" required></textarea>
+      <br><br>
+      <input type="submit" value="Predict">
+
+    </div>
+</form>
+<h2>Predicting Reviews:</h2><br>
+ <h2>{{ predict }}</h2>
+
+
+</body>
+</html>
