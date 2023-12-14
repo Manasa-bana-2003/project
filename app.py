@@ -1,3 +1,4 @@
+pip install Flask
 from flask import Flask, render_template, request
 import nltk
 import pickle
