@@ -1,4 +1,4 @@
-import streamlit as st
+from flask import Flask, render_template, request
 import nltk
 import pickle
 from nltk.sentiment.vader import SentimentIntensityAnalyzer #
@@ -22,7 +22,7 @@ def predict():
     score = SentimentIntensityAnalyzer().polarity_scores(text)
     if score["compound"] >= 0.25:
       predict= "Comment is Positive..!"
-    elif score["compound"] <= 0.25 and score["compound"] >=-0.75:
+    elif -0.25 <= score["compound"] < 0.25:
       predict= "Comment is Neutral..! "
     else:
       predict = "Comment is Negative..!"
@@ -31,3 +31,4 @@ def predict():
 
 if __name__=="__main__":
     app.run(use_reloader=True,debug=True)
+
