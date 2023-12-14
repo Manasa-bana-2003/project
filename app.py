@@ -1,5 +1,4 @@
-pip install Flask
-from flask import Flask, render_template, request
+
 import nltk
 import pickle
 from nltk.sentiment.vader import SentimentIntensityAnalyzer #
